@@ -779,16 +779,16 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Skills Section
+# compétences Section
 --------------------------------------------------------------*/
-.skills .progress {
+.competences .progress {
   height: 60px;
   display: block;
   background: none;
   border-radius: 0;
 }
 
-.skills .progress .skill {
+.competences .progress .skill {
   color: var(--heading-color);
   padding: 0;
   margin: 0 0 6px 0;
@@ -798,17 +798,17 @@ section,
   font-family: var(--heading-font);
 }
 
-.skills .progress .skill .val {
+.competences .progress .skill .val {
   float: right;
   font-style: normal;
 }
 
-.skills .progress-bar-wrap {
+.competences .progress-bar-wrap {
   background: color-mix(in srgb, var(--default-color), transparent 90%);
   height: 10px;
 }
 
-.skills .progress-bar {
+.competences .progress-bar {
   width: 1px;
   height: 10px;
   transition: 0.9s;
@@ -1571,6 +1571,25 @@ section,
   color: var(--accent-color);
 }
 
+.legal-page {
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #fafafa;
+}
+
+.legal-page h1, .legal-page h2 {
+  color: var(--accent-color);
+  margin-top: 24px;
+}
+
+.legal-page a {
+  color: var(--accent-color);
+}
+
+.legal-page a:hover {
+  text-decoration: underline;
+}
+  
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
