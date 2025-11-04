@@ -781,98 +781,199 @@ section,
 /*--------------------------------------------------------------
 # compétences Section
 --------------------------------------------------------------*/
+/* ======= Section Compétences (mise à jour) ======= */
+/* Section Compétences — corrige le conflit avec Bootstrap */
 .competences .progress {
-  height: 60px;
-  display: block;
+  display: block;          /* <— annule le display:flex de Bootstrap */
+  overflow: visible;       /* <— évite que le bouton soit rogné */
+  margin-bottom: 28px;
   background: none;
-  border-radius: 0;
+  height: auto;
 }
 
+
 .competences .progress .skill {
-  color: var(--heading-color);
-  padding: 0;
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-weight: 600;
-  font-family: var(--heading-font);
+  text-transform: uppercase;
+  color: #222;
+  margin-bottom: 6px;
 }
 
 .competences .progress .skill .val {
-  float: right;
-  font-style: normal;
+  font-size: 14px;
+  opacity: 0.7;
 }
 
 .competences .progress-bar-wrap {
-  background: color-mix(in srgb, var(--default-color), transparent 90%);
+  position: relative;
+  width: 100%;          /* <— garantit la largeur */
   height: 10px;
+  border-radius: 999px;
+  background: #e9ecef;
+  overflow: hidden;
 }
 
+
 .competences .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: 0.9s;
-  background-color: var(--accent-color);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: var(--accent-color, #0A84FF);
+  transition: width 0.8s ease;
 }
+
+/* ===== Lien vers projet ===== */
+.competences a.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-color, #0A84FF);
+  color: var(--accent-color, #0A84FF);
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.competences a.btn:hover {
+  background: var(--accent-color, #0A84FF);
+  color: #fff;
+}
+
 
 /*--------------------------------------------------------------
 # CV Section
 --------------------------------------------------------------*/
-.CV .CV-title {
-  color: var(--heading-color);
-  font-size: 26px;
-  font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 20px;
+/* ======= CV (Resume) — mise à jour lisibilité ======= */
+.resume .section-title p {
+  max-width: 920px;
+  margin: 0 auto 20px;
+  color: #566;
 }
 
-.CV .CV-item {
-  padding: 0 0 20px 20px;
-  margin-top: -2px;
-  border-left: 2px solid var(--accent-color);
-  position: relative;
-}
 
-.CV .CV-item h4 {
-  line-height: 18px;
-  font-size: 18px;
-  font-weight: 600;
+
+
+/* Titres de rubriques (Résumé, Éducation, Expériences…) */
+.resume .resume-title {
+  border-left:4px solid #0A84FF;
+  padding-left:8px;
+  color: #0A84FF;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  font-weight: 700;
   margin-bottom: 10px;
+  margin-top: 30px;
+}
+.resume .resume-title i{
+  color:#0A84FF; margin-right:8px; font-size:1.1rem; width:20px; text-align:center;
 }
 
-.CV .CV-item h5 {
-  font-size: 16px;
-  padding: 5px 15px;
-  display: inline-block;
+
+/* Carte d’un item (formation/expérience) */
+.resume .resume-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 26px;
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+  border:1px solid rgba(10,132,255,.08);
+}
+
+/* En-tête de l’item : titre + dates sur la même ligne quand c’est possible */
+.resume .resume-item h4 {
+  font-size: 1.02rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: #1d2b3a;
+}
+
+.resume-item hr {
+  border: 0;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  margin: 10px 0;
+}
+
+
+.resume .resume-item h5 {
+  font-size: .9rem;
   font-weight: 600;
-  margin-bottom: 10px;
+  color: #4b6aa6;
+  margin: 0 0 8px;
 }
 
-.CV .CV-item ul {
-  padding-left: 20px;
+/* Lieu/établissement en italique léger */
+.resume .resume-item em {
+  color: #556;
 }
 
-.CV .CV-item ul li {
-  padding-bottom: 10px;
+/* Texte et listes plus respirants */
+.resume .resume-item p {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: #26323f;
 }
 
-.CV .CV-item:last-child {
-  padding-bottom: 0;
+.resume .resume-item ul {
+  padding-left: 18px;
+  margin: 6px 0 0;
 }
 
-.CV .CV-item::before {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50px;
-  left: -9px;
-  top: 0;
-  background: var(--background-color);
-  border: 2px solid var(--accent-color);
+.resume .resume-item ul li {
+  margin: 4px 0;
 }
+
+/* === CV : forcer 2 colonnes au dessus de 992px, 1 colonne en dessous === */
+#resume .row {
+  display: block;            /* mobile: une seule colonne */
+}
+
+#resume {
+  background: #f8faff;
+  border-radius: 12px;
+  padding: 40px 20px;
+}
+
+@media (min-width: 992px) {
+  /* On s’affranchit du grid Bootstrap s’il est cassé ailleurs */
+  #resume .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* 2 colonnes égales */
+    gap: 36px;                        /* espace entre colonnes */
+  }
+  #resume .col-lg-6 {
+    margin-top: 24px;
+    width: auto;          /* neutralise d’éventuels width:100% */
+    max-width: none;      /* idem */
+    padding: 0;           /* évite un double padding */
+  }
+}
+
+.resume ul li i {
+  width: 18px;   /* même largeur pour toutes les icônes */
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  .resume .col-lg-6:nth-child(2) {
+    margin-top: 25px;
+  }
+}
+
+@media print{
+  #resume{ background:#fff; padding:0; }
+  .resume .resume-item{ box-shadow:none; border:1px solid #ddd; break-inside:avoid; }
+  nav, .back-to-top, footer{ display:none !important; }
+}
+
+
 
 /*--------------------------------------------------------------
 # Portfolio Section
@@ -1595,6 +1696,53 @@ section,
 --------------------------------------------------------------*/
 .starter-section -section {
   /* Add your styles here */
+}
+
+/* ===== Mentions légales ===== */
+.mentions-section {
+  background: linear-gradient(to bottom, #f9fbff, #e8f0ff);
+  padding: 80px 0;
+  color: #1a1a1a;
+  font-family: "Open Sans", sans-serif;
+}
+
+.mentions-section h1 {
+  text-align: center;
+  color: #0056d2;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.mentions-section h2 {
+  color: #003b91;
+  font-size: 1.4em;
+  margin-top: 30px;
+  border-left: 4px solid #007bff;
+  padding-left: 10px;
+}
+
+.mention-block {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px 25px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.mention-block a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.mention-block a:hover {
+  text-decoration: underline;
+}
+
+.footer-text {
+  text-align: center;
+  font-size: 0.9em;
+  margin-top: 40px;
+  color: #555;
 }
 
 
