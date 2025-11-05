@@ -1811,3 +1811,68 @@ section,
 }
 
 
+/* ===== Correction alignement compétences ===== */
+.competences .row {
+  justify-content: center; /* centre les colonnes */
+}
+
+.competences .col-lg-6 {
+  padding-left: 120px;  /* espace gauche constant */
+  padding-right: 120px; /* espace droit constant */
+  box-sizing: border-box;
+}
+
+@media (max-width: 1199px) {
+  .competences .col-lg-6 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+
+/* === CENTRER LE PORTFOLIO + GARDER UN GUTTER À GAUCHE === */
+
+/* 1) Centre le contenu du portfolio */
+#portfolio .container{
+  max-width: 1200px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 2) Grille propre et centrée */
+#portfolio .portfolio-container{
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  width: 100%;
+  max-width: 1200px;          /* borne centrale */
+  margin: 0 auto !important;  /* centre la grille */
+  justify-items: center;      /* centre chaque carte */
+  box-sizing: border-box;
+}
+
+/* 3) Gutter à gauche pour ne pas toucher la barre d’icônes */
+@media (min-width: 992px){            /* petit laptop et + */
+  #portfolio{
+    padding-left: 140px !important;   /* ajuste: 120–160px selon la barre d’icônes */
+  }
+}
+
+/* tablette : un gutter plus léger */
+@media (min-width: 768px) and (max-width: 991.98px){
+  #portfolio{ padding-left: 80px !important; }
+}
+
+/* mobile : centré sans gutter */
+@media (max-width: 767.98px){
+  #portfolio{ padding-left: 0 !important; }
+}
+
+/* Option confort : l’overlay reste cliquable quand on approche le bouton */
+.portfolio .portfolio-item .portfolio-info { pointer-events: none; }
+.portfolio .portfolio-item:hover .portfolio-info,
+.portfolio .portfolio-item .portfolio-info:hover{
+  opacity: 1 !important;
+  bottom: 12px !important;
+  pointer-events: auto;
+}
