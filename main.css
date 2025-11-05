@@ -44,6 +44,7 @@
   --surface-color: #ffffff;
 }
 
+
 .dark-background {
   --background-color: #060606;
   --default-color: #ffffff;
@@ -60,6 +61,7 @@
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
+
 body {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -153,6 +155,8 @@ h6 {
   overflow-y: auto;
   z-index: 997;
   min-width: 200px;
+  background: transparent !important;
+
 }
 
 @media (max-width: 1199px) {
@@ -783,6 +787,7 @@ section,
 --------------------------------------------------------------*/
 /* ======= Section Compétences (mise à jour) ======= */
 /* Section Compétences — corrige le conflit avec Bootstrap */
+.competences{background-color: #f8faff;}
 .competences .progress {
   display: block;          /* <— annule le display:flex de Bootstrap */
   overflow: visible;       /* <— évite que le bouton soit rogné */
@@ -851,6 +856,7 @@ section,
 # CV Section
 --------------------------------------------------------------*/
 /* ======= CV (Resume) — mise à jour lisibilité ======= */
+
 .resume .section-title p {
   max-width: 920px;
   margin: 0 auto 20px;
@@ -936,8 +942,7 @@ section,
 }
 
 #resume {
-  background: #f8faff;
-  border-radius: 12px;
+    border-radius: 12px;
   padding: 40px 20px;
 }
 
@@ -978,6 +983,7 @@ section,
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
+.portfolio{background-color: #f8faff;}
 .portfolio .portfolio-filters {
   padding: 0;
   margin: 0 auto 20px auto;
@@ -1204,88 +1210,6 @@ section,
 .services .service-item.item-pink:hover .icon path {
   fill: #f3268c;
 }
-
-/*--------------------------------------------------------------
-# Testimonials Section
---------------------------------------------------------------*/
-.testimonials .testimonials-carousel,
-.testimonials .testimonials-slider {
-  overflow: hidden;
-}
-
-.testimonials .testimonial-item .testimonial-content {
-  border-left: 3px solid var(--accent-color);
-  padding-left: 30px;
-}
-
-.testimonials .testimonial-item .testimonial-img {
-  border-radius: 50%;
-  border: 4px solid var(--background-color);
-  margin: 0 auto;
-}
-
-.testimonials .testimonial-item h3 {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 10px 0 5px 0;
-}
-
-.testimonials .testimonial-item h4 {
-  font-size: 14px;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  margin: 0 0 10px 0;
-}
-
-.testimonials .testimonial-item .stars i {
-  color: #ffc107;
-  margin: 0 1px;
-}
-
-.testimonials .testimonial-item .quote-icon-left,
-.testimonials .testimonial-item .quote-icon-right {
-  color: color-mix(in srgb, var(--accent-color), transparent 50%);
-  font-size: 26px;
-  line-height: 0;
-}
-
-.testimonials .testimonial-item .quote-icon-left {
-  display: inline-block;
-  left: -5px;
-  position: relative;
-}
-
-.testimonials .testimonial-item .quote-icon-right {
-  display: inline-block;
-  right: -5px;
-  position: relative;
-  top: 10px;
-  transform: scale(-1, -1);
-}
-
-.testimonials .testimonial-item p {
-  font-style: italic;
-}
-
-.testimonials .swiper-wrapper {
-  height: auto;
-}
-
-.testimonials .swiper-pagination {
-  margin-top: 30px;
-  position: relative;
-}
-
-.testimonials .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
-  opacity: 1;
-}
-
-.testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
-}
-
 
 
 /*--------------------------------------------------------------
@@ -1743,6 +1667,81 @@ section,
   font-size: 0.9em;
   margin-top: 40px;
   color: #555;
+}
+
+
+
+/* === Appliquer le même comportement que Accueil à toutes les sections === */
+.section {
+  position: relative;
+  min-height: 100vh; /* pleine hauteur d’écran */
+}
+
+/* Fait déborder les sections comme Accueil sous le menu */
+@media (min-width:1200px) and (max-width:1600px) {
+  .header ~ main .section {
+    margin-left: -160px;
+    width: 100vw;
+  }
+}
+
+/* === Fond atténué + dégradé haut et bas plus subtil === */
+.section.with-bg {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Image de fond atténuée */
+.section.with-bg > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45;                /* 💡 transparence globale */
+  z-index: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Dégradé bas très léger */
+.section.with-bg::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;                 /* 🔽 moins haut qu’avant (avant 160px) */
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 70%,
+    rgba(255, 255, 255, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+/* Dégradé haut très léger */
+.section.with-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(
+    to top,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 70%,
+    rgba(255, 255, 255, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+/* Contenu au-dessus */
+.section.with-bg > * {
+  position: relative;
+  z-index: 2;
 }
 
 
