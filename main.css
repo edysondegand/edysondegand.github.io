@@ -1082,6 +1082,14 @@ section,
   bottom: 0;
 }
 
+.portfolio .portfolio-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+  background: #fff;
+}
+.portfolio .portfolio-info h4 { margin: 8px 0 6px; }
+.portfolio .portfolio-info p  { margin: 0 0 10px; color: #566; }
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
