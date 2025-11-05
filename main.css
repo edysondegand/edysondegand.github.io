@@ -557,7 +557,7 @@ section,
 .Accueil::after{
   content:"";
   position:absolute; left:0; right:0; bottom:-1px;
-  height:120px;                 /* ajuste 80–160px selon ton goût */
+  height:0px;                 /* ajuste 80–160px selon ton goût */
   background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 85%);
   pointer-events:none; z-index:3;
 }
@@ -787,15 +787,72 @@ section,
 --------------------------------------------------------------*/
 /* ======= Section Compétences (mise à jour) ======= */
 /* Section Compétences — corrige le conflit avec Bootstrap */
-.competences{background-color: #f8faff;}
+
+/* === Plein écran pour la section Compétences === */
+#competences {
+  min-height: 100vh;          /* occupe toute la hauteur de la fenêtre */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;    /* centre verticalement */
+  align-items: center;        /* centre horizontalement */
+  padding: 80px 0;            /* un peu d’air en haut et en bas */
+  background-size: cover;
+  background-position: center;
+}
+
+#competences img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.35;              /* garde le fond visible mais discret */
+  z-index: 0;
+}
+
+#competences .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;          /* limite la largeur du contenu */
+}
+
+.competences{background-color: #f8faff;
+
+}
+
+
+#competences .skills-content{
+  display: grid;                     /* on évite les conflits avec .row flex */
+  grid-template-columns: 1fr 1fr;    /* 2 colonnes égales */
+  column-gap: 72px;
+  row-gap: 40px;
+}
+
+/* Les .col-lg-6 à l’intérieur d’une grid doivent prendre 100% de la cellule */
+#competences .col-lg-6{
+  width: 100%;
+  max-width: none;
+}
+
+/* Mobile/tablette : repasse en 1 colonne */
+@media (max-width: 991.98px){
+  #competences .skills-content{
+    grid-template-columns: 1fr;
+  }
+}
 .competences .progress {
   display: block;          /* <— annule le display:flex de Bootstrap */
   overflow: visible;       /* <— évite que le bouton soit rogné */
   margin-bottom: 28px;
   background: none;
   height: auto;
+  margin-bottom: 50px;
 }
 
+.competences .row.skills-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px; /* 🔼 plus d’espace entre les colonnes gauche/droite */
+}
 
 .competences .progress .skill {
   display: flex;
@@ -805,6 +862,7 @@ section,
   text-transform: uppercase;
   color: #222;
   margin-bottom: 6px;
+  font-size: 1.1rem;
 }
 
 .competences .progress .skill .val {
@@ -1719,7 +1777,7 @@ section,
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100px;                 /* 🔽 moins haut qu’avant (avant 160px) */
+  height: 0px;                 /* 🔽 moins haut qu’avant (avant 160px) */
   background: linear-gradient(
     to bottom,
     transparent 0%,
@@ -1736,7 +1794,7 @@ section,
   top: 0;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 0px;
   background: linear-gradient(
     to top,
     transparent 0%,
