@@ -789,124 +789,26 @@ section,
 /* Section Compétences — corrige le conflit avec Bootstrap */
 
 /* === Plein écran pour la section Compétences === */
-#competences {
-  min-height: 100vh;          /* occupe toute la hauteur de la fenêtre */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;    /* centre verticalement */
-  align-items: center;        /* centre horizontalement */
-  padding: 80px 0;            /* un peu d’air en haut et en bas */
-  background-size: cover;
-  background-position: center;
+/* Nouveaux styles pour la mise en page 'Cartes' (à ajouter/vérifier) */
+.competences .card {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-#competences img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  opacity: 0.35;              /* garde le fond visible mais discret */
-  z-index: 0;
+.competences .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
-#competences .container {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 1400px;          /* limite la largeur du contenu */
-}
-
-.competences{background-color: #f8faff;
-
-}
-
-
-#competences .skills-content{
-  display: grid;                     /* on évite les conflits avec .row flex */
-  grid-template-columns: 1fr 1fr;    /* 2 colonnes égales */
-  column-gap: 72px;
-  row-gap: 40px;
-}
-
-/* Les .col-lg-6 à l’intérieur d’une grid doivent prendre 100% de la cellule */
-#competences .col-lg-6{
-  width: 100%;
-  max-width: none;
-}
-
-/* Mobile/tablette : repasse en 1 colonne */
-@media (max-width: 991.98px){
-  #competences .skills-content{
-    grid-template-columns: 1fr;
-  }
-}
-.competences .progress {
-  display: block;          /* <— annule le display:flex de Bootstrap */
-  overflow: visible;       /* <— évite que le bouton soit rogné */
-  margin-bottom: 28px;
-  background: none;
-  height: auto;
-  margin-bottom: 50px;
-}
-
-.competences .row.skills-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 80px; /* 🔼 plus d’espace entre les colonnes gauche/droite */
-}
-
-.competences .progress .skill {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #222;
-  margin-bottom: 6px;
-  font-size: 1.1rem;
-}
-
-.competences .progress .skill .val {
-  font-size: 14px;
-  opacity: 0.7;
-}
-
-.competences .progress-bar-wrap {
-  position: relative;
-  width: 100%;          /* <— garantit la largeur */
-  height: 10px;
-  border-radius: 999px;
-  background: #e9ecef;
-  overflow: hidden;
-}
-
-
-.competences .progress-bar {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  background: var(--accent-color, #0A84FF);
-  transition: width 0.8s ease;
-}
-
-/* ===== Lien vers projet ===== */
-.competences a.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 10px;
-  font-size: 14px;
-  padding: 6px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--accent-color, #0A84FF);
-  color: var(--accent-color, #0A84FF);
-  text-decoration: none;
-  transition: 0.2s ease;
-}
-
-.competences a.btn:hover {
-  background: var(--accent-color, #0A84FF);
-  color: #fff;
+.competences .icon-box {
+    width: 80px;
+    height: 80px;
+    background: #f7f7f7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
