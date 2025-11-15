@@ -845,12 +845,20 @@ section,
 
 /* Carte d’un item (formation/expérience) */
 .resume .resume-item {
-  background: #fff;
-  border-radius: 12px;
-  padding: 18px 22px;
-  margin-bottom: 26px;
-  box-shadow:0 6px 18px rgba(0,0,0,.06);
-  border:1px solid rgba(10,132,255,.08);
+  background: transparent; /* Retire le fond blanc */
+  border-radius: 4px; 
+  padding: 0 0 24px 18px; /* Ajout d'espace */
+  margin-bottom: 24px;
+  box-shadow: none; /* Retire l'ombre */
+  border-left: 3px solid #ddd; /* Ligne verticale de timeline */
+  border-top: none; 
+  border-right: none;
+  border-bottom: 1px solid rgba(0,0,0,.05); /* Ligne horizontale */
+  transition: border-color 0.3s;
+}
+
+.resume .resume-item:hover {
+    border-left-color: var(--accent-color, #0563bb); /* Couleur au survol */
 }
 
 /* En-tête de l’item : titre + dates sur la même ligne quand c’est possible */
