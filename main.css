@@ -817,6 +817,19 @@ section,
 --------------------------------------------------------------*/
 /* ======= CV (Resume) — mise à jour lisibilité ======= */
 
+
+#resume .container {
+    /* Ajoute un padding à gauche, l'espace entre le bord et le contenu du CV */
+    padding-left: 20px !important; 
+}
+
+/* Ajustement pour les écrans larges où la barre latérale est visible */
+@media (min-width: 1200px) {
+    #resume .container {
+        /* Augmente le décalage pour laisser l'espace au menu fixe */
+        padding-left: 80px !important; 
+    }
+}
 .resume .section-title p {
   max-width: 920px;
   margin: 0 auto 20px;
@@ -837,6 +850,7 @@ section,
   font-weight: 700;
   margin-bottom: 10px;
   margin-top: 30px;
+  padding-left: 18px !important; /* Ajoute un peu d'espace entre le bord du container et le titre */
 }
 .resume .resume-title i{
   color:#0A84FF; margin-right:8px; font-size:1.1rem; width:20px; text-align:center;
@@ -925,6 +939,7 @@ section,
 #resume {
     border-radius: 12px;
   padding: 40px 20px;
+  padding-left: 10px; /* Laisse une petite marge */
 }
 
 @media (min-width: 992px) {
