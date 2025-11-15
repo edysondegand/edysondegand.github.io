@@ -845,28 +845,46 @@ section,
 
 /* Carte d’un item (formation/expérience) */
 .resume .resume-item {
-  background: transparent; /* Retire le fond blanc */
-  border-radius: 4px; 
-  padding: 0 0 24px 18px; /* Ajout d'espace */
-  margin-bottom: 24px;
-  box-shadow: none; /* Retire l'ombre */
-  border-left: 3px solid #ddd; /* Ligne verticale de timeline */
-  border-top: none; 
-  border-right: none;
-  border-bottom: 1px solid rgba(0,0,0,.05); /* Ligne horizontale */
-  transition: border-color 0.3s;
+    /* Écrase l'ancien style de boîte */
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important; /* Supprime toute bordure de boîte */
+    border-radius: 0 !important;
+
+    /* Nouvel effet de ligne (Timeline) */
+    padding: 12px 0 24px 18px !important; /* Retrait de l'espace horizontal superflu */
+    margin-bottom: 0 !important;
+    
+    /* Ligne verticale */
+    border-left: 3px solid #ddd !important;
+    
+    /* Ligne horizontale séparatrice entre les éléments */
+    border-bottom: 1px solid rgba(0,0,0,.08) !important;
 }
 
+/* Ligne de séparation dans le dernier élément (pour la propreté) */
+.resume .resume-item:last-child {
+    border-bottom: none !important;
+}
+
+/* Effet au survol (optionnel, mais sympa) */
 .resume .resume-item:hover {
-    border-left-color: var(--accent-color, #0563bb); /* Couleur au survol */
+    border-left-color: var(--accent-color, #0563bb) !important;
 }
 
-/* En-tête de l’item : titre + dates sur la même ligne quand c’est possible */
+/* Règle pour le titre des rubriques dans la timeline (Education, Experience) */
 .resume .resume-item h4 {
-  font-size: 1.02rem;
-  font-weight: 700;
-  margin: 0 0 4px;
-  color: #1d2b3a;
+    margin: 0 0 4px 0 !important;
+    padding: 0 !important;
+}
+
+/* Règle pour l'établissement ou le lieu dans la timeline */
+.resume .resume-item em {
+    display: block;
+    margin-top: 4px !important;
+    margin-bottom: 8px !important;
+    color: #6c757d !important;
+    font-size: 0.95rem;
 }
 
 .resume-item hr {
@@ -881,11 +899,6 @@ section,
   font-weight: 600;
   color: #4b6aa6;
   margin: 0 0 8px;
-}
-
-/* Lieu/établissement en italique léger */
-.resume .resume-item em {
-  color: #556;
 }
 
 /* Texte et listes plus respirants */
