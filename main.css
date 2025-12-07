@@ -837,7 +837,18 @@ section,
   color: #566;
 }
 
+.resume .row.justify-content-center {
+  /* Annule le padding qui décale toute la section vers la droite */
+  padding-left: 0 !important; 
+  padding-right: 0 !important; 
+  /* Assure que la ligne prend la largeur maximale disponible */
+  width: 100%;
+}
 
+/* S'assure que le bouton lui-même est bien centré */
+.resume .row.justify-content-center .col-12 {
+  text-align: center !important; 
+}
 
 
 /* Titres de rubriques (Résumé, Éducation, Expériences…) */
@@ -1815,3 +1826,7 @@ section,
   bottom: 12px !important;
   pointer-events: auto;
 }
+
+
+
+
