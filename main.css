@@ -836,19 +836,20 @@ section,
   margin: 0 auto 20px;
   color: #566;
 }
-
-.resume .row.justify-content-center {
-  /* Annule le padding qui décale toute la section vers la droite */
-  padding-left: 0 !important; 
-  padding-right: 0 !important; 
-  /* Assure que la ligne prend la largeur maximale disponible */
-  width: 100%;
+@media (min-width: 1200px) {
+    #resume .container .row.justify-content-center {
+        /* Compense le padding-left de 80px du .container parent */
+        margin-left: -80px !important;
+        
+        /* Étend la largeur du row pour couvrir l'espace récupéré */
+        width: calc(100% + 80px) !important; 
+        
+        /* Retire le padding résiduel de la grille (s'il y en a) */
+        padding-left: 0 !important;
+        padding-right: 0 !important; 
+    }
 }
 
-/* S'assure que le bouton lui-même est bien centré */
-.resume .row.justify-content-center .col-12 {
-  text-align: center !important; 
-}
 
 
 /* Titres de rubriques (Résumé, Éducation, Expériences…) */
@@ -943,30 +944,19 @@ section,
   margin: 4px 0;
 }
 
-/* === CV : forcer 2 colonnes au dessus de 992px, 1 colonne en dessous === */
-#resume .row {
-  display: block;            /* mobile: une seule colonne */
-}
 
-#resume {
-    border-radius: 12px;
-  padding: 40px 20px;
-  padding-left: 10px; /* Laisse une petite marge */
-}
+@media (min-width: 1200px) {
+    #resume .container .row.justify-content-center {
+        /* Compense le padding-left de 80px du .container parent */
+        margin-left: -40px !important;
 
-@media (min-width: 992px) {
-  /* On s’affranchit du grid Bootstrap s’il est cassé ailleurs */
-  #resume .row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;   /* 2 colonnes égales */
-    gap: 36px;                        /* espace entre colonnes */
-  }
-  #resume .col-lg-6 {
-    margin-top: 24px;
-    width: auto;          /* neutralise d’éventuels width:100% */
-    max-width: none;      /* idem */
-    padding: 0;           /* évite un double padding */
-  }
+        /* Étend la largeur du row pour couvrir l'espace récupéré */
+        width: calc(100% + 80px) !important; 
+
+        /* Retire le padding résiduel de la grille */
+        padding-left: 0 !important;
+        padding-right: 0 !important; 
+    }
 }
 
 .resume ul li i {
@@ -1826,7 +1816,3 @@ section,
   bottom: 12px !important;
   pointer-events: auto;
 }
-
-
-
-
