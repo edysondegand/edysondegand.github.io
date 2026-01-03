@@ -11,31 +11,50 @@
 
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
 
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
   <link href="main.css" rel="stylesheet">
-  
+
   <style>
     .module-item {
       border-left: 5px solid #0563bb;
       background: #fff;
       transition: 0.3s;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
+
     .module-item:hover {
       background: #f0f7ff;
       transform: translateX(5px);
     }
+
     .badge-code {
       background-color: #0563bb;
       font-size: 0.85rem;
-      min-width: 60px;
+      min-width: 65px;
+      text-align: center;
     }
-    .main-content { padding-top: 50px; }
+
+    .main-content {
+      padding-top: 50px;
+    }
+
+    .btn-zip {
+      background-color: #f8f9fa;
+      color: #0563bb;
+      border: 1px solid #0563bb;
+    }
+
+    .btn-zip:hover {
+      background-color: #0563bb;
+      color: #fff;
+    }
   </style>
 </head>
 
@@ -47,7 +66,8 @@
       <ul>
         <li><a href="index.html#Accueil"><i class="bi bi-house navicon"></i><span>Accueil</span></a></li>
         <li><a href="index.html#a-propos"><i class="bi bi-person navicon"></i><span>À propos</span></a></li>
-        <li><a href="index.html#competences" class="active"><i class="bi bi-gear-fill navicon"></i><span>Compétences</span></a></li>
+        <li><a href="index.html#competences" class="active"><i
+              class="bi bi-gear-fill navicon"></i><span>Compétences</span></a></li>
         <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i><span>CV</span></a></li>
         <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i><span>Portfolio</span></a></li>
       </ul>
@@ -60,76 +80,124 @@
 
         <div class="section-title text-center mb-5">
           <h2 class="fw-bold">UE11 - Administrer les réseaux et l'Internet</h2>
-          <p class="text-muted">Détail des modules et des comptes-rendus de première année.</p>
+          <p class="text-muted">Retrouvez ici l'ensemble des modules et les packs de comptes-rendus à télécharger.</p>
         </div>
 
         <div class="row">
-          
+
           <div class="col-12">
-            
+
             <div class="module-item p-3 shadow-sm rounded d-flex justify-content-between align-items-center flex-wrap">
-              <div><span class="badge badge-code mb-2">R1.01</span> <h5 class="d-inline ms-2">Initiation aux réseaux informatiques</h5></div>
-              <a href="projets/CR_R101.pdf" target="_blank" class="btn btn-outline-primary btn-sm">Voir le compte-rendu</a>
+              <div><span class="badge badge-code mb-2">R1.01</span>
+                <h5 class="d-inline ms-2">Initiation aux réseaux informatiques</h5>
+              </div>
+              <a href="projets/projet1.zip" download="Pack_R101_Edyson_Degand.zip"
+                class="btn btn-zip btn-sm mt-2 mt-sm-0">
+                <i class="bi bi-file-earmark-zip me-1"></i> Télécharger les CR
+              </a>
             </div>
 
             <div class="module-item p-3 shadow-sm rounded d-flex justify-content-between align-items-center flex-wrap">
-              <div><span class="badge badge-code mb-2">R1.02</span> <h5 class="d-inline ms-2">Principes et architecture des réseaux</h5></div>
-              <a href="projets/CR_R102.pdf" target="_blank" class="btn btn-outline-primary btn-sm">Voir le compte-rendu</a>
+              <div><span class="badge badge-code mb-2">R1.02</span>
+                <h5 class="d-inline ms-2">Principes et architecture des réseaux</h5>
+              </div>
+              <a href="projets/Pack_R102.zip" download class="btn btn-zip btn-sm mt-2 mt-sm-0">
+                <i class="bi bi-file-earmark-zip me-1"></i> Télécharger les CR
+              </a>
             </div>
 
             <div class="module-item p-3 shadow-sm rounded d-flex justify-content-between align-items-center flex-wrap">
-              <div><span class="badge badge-code mb-2">R1.03</span> <h5 class="d-inline ms-2">Réseaux locaux et équipements actifs</h5></div>
-              <a href="projets/CR_R103.pdf" target="_blank" class="btn btn-outline-primary btn-sm">Voir le compte-rendu</a>
+              <div><span class="badge badge-code mb-2">R1.03</span>
+                <h5 class="d-inline ms-2">Réseaux locaux et équipements actifs</h5>
+              </div>
+              <a href="projets/Pack_R103.zip" download class="btn btn-zip btn-sm mt-2 mt-sm-0">
+                <i class="bi bi-file-earmark-zip me-1"></i> Télécharger les CR
+              </a>
             </div>
 
             <div class="module-item p-3 shadow-sm rounded d-flex justify-content-between align-items-center flex-wrap">
-              <div><span class="badge badge-code mb-2">R1.04</span> <h5 class="d-inline ms-2">Fondamentaux de l'électronique analogique</h5></div>
-              <a href="projets/CR_R104.pdf" target="_blank" class="btn btn-outline-primary btn-sm">Voir le compte-rendu</a>
+              <div><span class="badge badge-code mb-2">R1.04</span>
+                <h5 class="d-inline ms-2">Fondamentaux de l'électronique analogique</h5>
+              </div>
+              <a href="projets/Pack_R104.zip" download class="btn btn-zip btn-sm mt-2 mt-sm-0">
+                <i class="bi bi-file-earmark-zip me-1"></i> Télécharger les CR
+              </a>
             </div>
 
             <div class="module-item p-3 shadow-sm rounded d-flex justify-content-between align-items-center flex-wrap">
-              <div><span class="badge badge-code mb-2">R1.06</span> <h5 class="d-inline ms-2">Architecture des systèmes numériques et informatiques</h5></div>
-              <a href="projets/CR_R106.pdf" target="_blank" class="btn btn-outline-primary btn-sm">Voir le compte-rendu</a>
+              <div><span class="badge badge-code mb-2">R1.06</span>
+                <h5 class="d-inline ms-2">Architecture des systèmes numériques et informatiques</h5>
+              </div>
+              <a href="projets/Pack_R106.zip" download class="btn btn-zip btn-sm mt-2 mt-sm-0">
+                <i class="bi bi-file-earmark-zip me-1"></i> Télécharger les CR
+              </a>
             </div>
 
             <div class="module-item p-3 shadow-sm rounded d-flex justify-content-between align-items-center flex-wrap">
-              <div><span class="badge badge-code mb-2">R1.08</span> <h5 class="d-inline ms-2">Bases des systèmes d'exploitation</h5></div>
-              <a href="projets/CR_R108.pdf" target="_blank" class="btn btn-outline-primary btn-sm">Voir le compte-rendu</a>
+              <div><span class="badge badge-code mb-2">R1.08</span>
+                <h5 class="d-inline ms-2">Bases des systèmes d'exploitation</h5>
+              </div>
+              <a href="projets/Pack_R108.zip" download class="btn btn-zip btn-sm mt-2 mt-sm-0">
+                <i class="bi bi-file-earmark-zip me-1"></i> Télécharger les CR
+              </a>
             </div>
 
             <div class="module-item p-3 shadow-sm rounded d-flex justify-content-between align-items-center flex-wrap">
-              <div><span class="badge badge-code mb-2">R1.10</span> <h5 class="d-inline ms-2">Anglais de communication technique</h5></div>
-              <a href="projets/CR_R110.pdf" target="_blank" class="btn btn-outline-primary btn-sm">Voir le compte-rendu</a>
+              <div><span class="badge badge-code mb-2">R1.10</span>
+                <h5 class="d-inline ms-2">Anglais général de communication technique</h5>
+              </div>
+              <a href="projets/Pack_R110.zip" download class="btn btn-zip btn-sm mt-2 mt-sm-0">
+                <i class="bi bi-file-earmark-zip me-1"></i> Télécharger les CR
+              </a>
             </div>
 
             <div class="module-item p-3 shadow-sm rounded d-flex justify-content-between align-items-center flex-wrap">
-              <div><span class="badge badge-code mb-2">R1.13</span> <h5 class="d-inline ms-2">Mathématiques du signal</h5></div>
-              <a href="projets/CR_R113.pdf" target="_blank" class="btn btn-outline-primary btn-sm">Voir le compte-rendu</a>
+              <div><span class="badge badge-code mb-2">R1.13</span>
+                <h5 class="d-inline ms-2">Mathématiques du signal</h5>
+              </div>
+              <a href="projets/Pack_R113.zip" download class="btn btn-zip btn-sm mt-2 mt-sm-0">
+                <i class="bi bi-file-earmark-zip me-1"></i> Télécharger les CR
+              </a>
             </div>
 
             <div class="module-item p-3 shadow-sm rounded d-flex justify-content-between align-items-center flex-wrap">
-              <div><span class="badge badge-code mb-2">R1.15</span> <h5 class="d-inline ms-2">Gestion de projet</h5></div>
-              <a href="projets/CR_R115.pdf" target="_blank" class="btn btn-outline-primary btn-sm">Voir le compte-rendu</a>
+              <div><span class="badge badge-code mb-2">R1.15</span>
+                <h5 class="d-inline ms-2">Gestion de projet</h5>
+              </div>
+              <a href="projets/Pack_R115.zip" download class="btn btn-zip btn-sm mt-2 mt-sm-0">
+                <i class="bi bi-file-earmark-zip me-1"></i> Télécharger les CR
+              </a>
             </div>
 
           </div>
 
           <div class="col-12 mt-5">
-            <h3 class="fw-bold mb-4 text-primary"><i class="bi bi-folder-check"></i> Situations d'Apprentissage et d'Évaluation</h3>
-            
-            <div class="card mb-3 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title fw-bold">SAÉ 1.1 - Hygiène informatique et Cybersécurité</h5>
-                <p class="card-text small">Sensibilisation aux bonnes pratiques de sécurité et protection des données.</p>
-                <a href="projets/CR_SAE11.pdf" target="_blank" class="btn btn-primary btn-sm">Rapport SAÉ 1.1</a>
-              </div>
-            </div>
+            <h3 class="fw-bold mb-4 text-primary"><i class="bi bi-folder-check"></i> Situations d'Apprentissage et
+              d'Évaluation</h3>
 
-            <div class="card shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title fw-bold">SAÉ 1.2 - S'initier aux réseaux informatiques</h5>
-                <p class="card-text small">Première mise en situation réelle sur des équipements actifs.</p>
-                <a href="projets/CR_SAE12.pdf" target="_blank" class="btn btn-primary btn-sm">Rapport SAÉ 1.2</a>
+            <div class="row gy-3">
+              <div class="col-md-6">
+                <div class="card shadow-sm border-start border-primary border-4">
+                  <div class="card-body">
+                    <h5 class="fw-bold">SAÉ 1.1 - Hygiène & Cybersécurité</h5>
+                    <p class="small text-muted">Dossier complet sur les bonnes pratiques de sécurité.</p>
+                    <a href="projets/Pack_SAE11.zip" download class="btn btn-primary btn-sm">
+                      <i class="bi bi-file-earmark-zip"></i> Télécharger le Pack SAÉ 1.1
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="card shadow-sm border-start border-primary border-4">
+                  <div class="card-body">
+                    <h5 class="fw-bold">SAÉ 1.2 - S'initier aux réseaux</h5>
+                    <p class="small text-muted">Rapports de mise en situation sur équipements réels.</p>
+                    <a href="projets/Pack_SAE12.zip" download class="btn btn-primary btn-sm">
+                      <i class="bi bi-file-earmark-zip"></i> Télécharger le Pack SAÉ 1.2
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -137,7 +205,9 @@
         </div>
 
         <div class="text-center mt-5">
-          <a href="index.html#competences" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Retour au Portfolio</a>
+          <a href="index.html#competences" class="btn btn-secondary shadow-sm">
+            <i class="bi bi-arrow-left me-2"></i> Retour au Portfolio
+          </a>
         </div>
 
       </div>
@@ -145,7 +215,9 @@
   </main>
 
   <footer id="footer" class="footer py-4 text-center">
-    <div class="container"><div class="small text-muted">&copy; 2025 Edyson Degand - IUT de Béthune.</div></div>
+    <div class="container">
+      <div class="small text-muted">&copy; 2025 Edyson Degand - IUT de Béthune.</div>
+    </div>
   </footer>
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -162,4 +234,5 @@
     }
   </script>
 </body>
+
 </html>
