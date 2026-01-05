@@ -11,15 +11,33 @@
   <link href="main.css" rel="stylesheet">
 
   <style>
+    /* C'est ici que la magie opère pour ton fond d'écran */
+    body {
+      background-image: url('assets/img/background/programmer.png');
+      /* Le chemin vers ton image locale */
+      background-size: cover;
+      /* L'image s'étire pour couvrir tout l'écran */
+      background-position: center;
+      /* L'image est centrée */
+      background-repeat: no-repeat;
+      /* Pas de répétition moche */
+      background-attachment: fixed;
+      /* L'image reste fixe quand tu scrolles */
+    }
+
     .project-card {
       transition: all 0.3s ease-in-out;
       border: none;
       border-radius: 15px;
+      /* Fond blanc légèrement transparent pour que le texte soit lisible sur ton image */
+      background-color: rgba(255, 255, 255, 0.92);
     }
+
     .project-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     }
+
     .icon-circle {
       width: 80px;
       height: 80px;
@@ -40,8 +58,10 @@
     <div class="container" data-aos="fade-up">
 
       <div class="section-title text-center mb-5">
-        <h2 class="fw-bold">Projets : Programmer</h2>
-        <p class="text-muted">Développement d'outils, scripts d'automatisation et gestion de données.</p>
+        <div style="background-color: rgba(255,255,255,0.8); display: inline-block; padding: 15px; border-radius: 10px;">
+          <h2 class="fw-bold">Projets : Programmer</h2>
+          <p class="text-muted">Développement d'outils, scripts d'automatisation et gestion de données.</p>
+        </div>
       </div>
 
       <div class="row gy-4 justify-content-center">
