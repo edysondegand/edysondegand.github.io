@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Projets Programmer - Edyson Degand</title>
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="main.css" rel="stylesheet">
+
+  <style>
+    .project-card {
+      transition: all 0.3s ease-in-out;
+      border: none;
+      border-radius: 15px;
+    }
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .icon-circle {
+      width: 80px;
+      height: 80px;
+      background: #f0f7ff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: #0563bb;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <main id="main" class="py-5">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title text-center mb-5">
+        <h2 class="fw-bold">Projets : Programmer</h2>
+        <p class="text-muted">Développement d'outils, scripts d'automatisation et gestion de données.</p>
+      </div>
+
+      <div class="row gy-4 justify-content-center">
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card project-card shadow-sm h-100 p-4">
+            <div class="icon-circle">
+              <i class="bi bi-code-slash"></i>
+            </div>
+            <div class="card-body text-center p-0">
+              <h5 class="fw-bold mb-3">Programmation Python</h5>
+              <p class="card-text small text-muted">Développement de scripts vu dans la ressource R1.07.</p>
+              <a href="projets/r107.zip" download class="btn btn-outline-primary btn-sm mt-3 w-100">
+                <i class="bi bi-download me-2"></i>Télécharger les codes
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card project-card shadow-sm h-100 p-4">
+            <div class="icon-circle">
+              <i class="bi bi-terminal"></i>
+            </div>
+            <div class="card-body text-center p-0">
+              <h5 class="fw-bold mb-3">Scripts système et requêtes web</h5>
+              <p class="card-text small text-muted">Développement de scripts système et de requêtes web vu dans la ressource R1.07.</p>
+              <a href="https://gitlab.univ-artois.fr/edyson_degand/r107" download class="btn btn-outline-primary btn-sm mt-3 w-100">
+                <i class="bi bi-download me-2"></i>Accéder au répertoire gitlab
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card project-card shadow-sm h-100 p-4 border-top border-primary border-4">
+            <div class="icon-circle">
+              <i class="bi bi-github"></i>
+            </div>
+            <div class="card-body text-center p-0">
+              <h5 class="fw-bold mb-3">Développement site Web</h5>
+              <p class="card-text small text-muted">Création de ce portfolio via HTML/CSS et hébergement sur GitHub Pages.</p>
+              <a href="https://github.com/edysondegand/edysondegand.github.io.git" target="_blank" class="btn btn-primary btn-sm mt-3 w-100">
+                <i class="bi bi-eye me-2"></i>Voir le dépôt Git
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="index.html#competences" class="btn btn-secondary px-4 shadow-sm">
+          <i class="bi bi-arrow-left me-2"></i>Retour au Portfolio
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
