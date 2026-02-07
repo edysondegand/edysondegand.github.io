@@ -12,44 +12,116 @@
   <link href="main.css" rel="stylesheet">
 
   <style>
-    /* C'est ici que la magie opère pour ton fond d'écran */
+    /* Fond d'écran */
     body {
       background-image: url('assets/img/background/administrer.png');
-      /* Le chemin vers ton image locale */
       background-size: cover;
-      /* L'image s'étire pour couvrir tout l'écran */
       background-position: center;
-      /* L'image est centrée */
       background-repeat: no-repeat;
-      /* Pas de répétition moche */
       background-attachment: fixed;
-      /* L'image reste fixe quand tu scrolles */
     }
 
+    /* Palette pro */
+    :root {
+      --primary-blue: #1f3a5f;
+      --soft-blue: #2f5d8c;
+      --light-bg: rgba(255, 255, 255, 0.95);
+      --card-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    }
+
+    /* Cartes projets classiques */
     .project-card {
       transition: all 0.3s ease-in-out;
       border: none;
-      border-radius: 15px;
-      /* Fond blanc légèrement transparent pour que le texte soit lisible sur ton image */
-      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 18px;
+      background-color: var(--light-bg);
+      box-shadow: var(--card-shadow);
     }
 
     .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
     }
 
+    /* Icône ronde */
     .icon-circle {
-      width: 80px;
-      height: 80px;
-      background: #f0f7ff;
+      width: 75px;
+      height: 75px;
+      background: #eef3f8;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 20px;
-      color: #0563bb;
-      font-size: 2rem;
+      color: var(--primary-blue);
+      font-size: 1.9rem;
+    }
+
+    /* Bloc validation compétence */
+    .validation-box {
+      background: var(--light-bg);
+      border-left: 6px solid var(--primary-blue);
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .validation-box h4 {
+      color: var(--primary-blue);
+    }
+
+    /* Cartes SAE (plus importantes mais sobres) */
+    .sae-card {
+      border-radius: 20px;
+      background: white;
+      border: 1px solid #dbe3ec;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+    }
+
+    .sae-card::before {
+      content: "SAÉ";
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--primary-blue);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 8px;
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      opacity: 0.9;
+    }
+
+    .sae-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Boutons plus pro */
+    .btn-primary {
+      background-color: var(--primary-blue);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--soft-blue);
+    }
+
+    .btn-outline-primary {
+      border-color: var(--primary-blue);
+      color: var(--primary-blue);
+    }
+
+    .btn-outline-primary:hover {
+      background-color: var(--primary-blue);
+      color: white;
+    }
+
+    h2 {
+      color: var(--primary-blue);
     }
   </style>
 </head>
@@ -59,46 +131,100 @@
   <main id="main" class="py-5">
     <div class="container" data-aos="fade-up">
 
-      <div class="section-title text-center mb-5">
-        <div
-          style="background-color: rgba(255,255,255,0.8); display: inline-block; padding: 15px; border-radius: 10px;">
+      <!-- Titre -->
+      <div class="section-title text-center mb-4">
+        <div style="background-color: rgba(255,255,255,0.9); display: inline-block; padding: 18px 25px; border-radius: 12px;">
           <h2 class="fw-bold">Projets : Administrer</h2>
           <p class="text-muted mb-0">Gestion des systèmes d'exploitation et sécurité informatique.</p>
         </div>
       </div>
 
+      <!-- Bloc validation compétence -->
+      <div class="validation-box mb-5 text-center">
+        <h4 class="fw-bold mb-3">Compétence Administrer validée</h4>
+        <p class="mb-0 text-muted">
+          J’ai validé la compétence <strong>Administrer</strong> grâce aux travaux réalisés durant l’année.
+          Je sais installer et configurer des systèmes d’exploitation, mettre en place des machines virtuelles,
+          comprendre l’architecture des réseaux, gérer l’adressage IP et appliquer les bases de la sécurité informatique.
+          Ces compétences ont été développées lors des TP, projets et SAÉ réalisés en formation.
+        </p>
+      </div>
+
+      <!-- Cartes -->
       <div class="row gy-4 justify-content-center">
 
+        <!-- SAE 1 -->
+        <div class="col-lg-5 col-md-6">
+          <div class="card sae-card h-100 p-4">
+            <div class="icon-circle"><i class="bi bi-shield-lock"></i></div>
+            <div class="card-body text-center p-0">
+              <h5 class="fw-bold mb-3">Sensibilisation à l’hygiène informatique et à la cybersécurité</h5>
+              <p class="card-text small text-muted">
+                MOOC de l’ANSSI sur les bonnes pratiques en cybersécurité :
+                protection des données, gestion des mots de passe,
+                sécurisation des systèmes et sensibilisation aux menaces.
+              </p>
+              <a href="projets/Administrer/attestationmooc.pdf" download class="btn btn-primary btn-sm mt-3 w-100">
+                <i class="bi bi-download me-2"></i>Télécharger le compte rendu
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SAE 2 -->
+        <div class="col-lg-5 col-md-6">
+          <div class="card sae-card h-100 p-4">
+            <div class="icon-circle"><i class="bi bi-diagram-3"></i></div>
+            <div class="card-body text-center p-0">
+              <h5 class="fw-bold mb-3">S’initier aux réseaux informatiques</h5>
+              <p class="card-text small text-muted">
+                Création d’une petite entreprise virtuelle avec mise en place d’un réseau :
+                plan d’adressage IP, organisation de l’infrastructure et premières notions
+                d’administration réseau.
+              </p>
+              <a href="projets/Administrer/SAE12.zip" download class="btn btn-primary btn-sm mt-3 w-100">
+                <i class="bi bi-download me-2"></i>Télécharger le compte rendu
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projet 1 -->
         <div class="col-lg-4 col-md-6">
-          <div class="card project-card shadow-sm h-100 p-4">
+          <div class="card project-card h-100 p-4">
             <div class="icon-circle"><i class="bi bi-ubuntu"></i></div>
             <div class="card-body text-center p-0">
               <h5 class="fw-bold mb-3">Principes architecture des réseaux</h5>
-              <p class="card-text small text-muted">Compréhension de la structure des réseaux Internet et locaux.
-                Analyse des protocoles standards (Ethernet, IP, TCP, UDP) et mise en œuvre de schémas d'adressage réseau
-                efficaces.</p>
-              <a href="projets/r102.zip" download class="btn btn-outline-primary btn-sm mt-3 w-100">
+              <p class="card-text small text-muted">
+                Analyse des protocoles (Ethernet, IP, TCP, UDP) et mise en œuvre
+                de schémas d’adressage réseau efficaces.
+              </p>
+              <a href="projets/Administrer/r102.zip" download class="btn btn-outline-primary btn-sm mt-3 w-100">
                 <i class="bi bi-download me-2"></i>Télécharger les CR
               </a>
             </div>
           </div>
         </div>
 
+        <!-- Projet 2 -->
         <div class="col-lg-4 col-md-6">
-          <div class="card project-card shadow-sm h-100 p-4">
+          <div class="card project-card h-100 p-4">
             <div class="icon-circle"><i class="bi bi-pc-display"></i></div>
             <div class="card-body text-center p-0">
-              <h5 class="fw-bold mb-3">Virtualisation</h5>
-              <p class="card-text small text-muted">Mise en place de machines virtuelles et réseaux isolés avec
-                VirtualBox.</p>
-              <a href="projets/r101.zip" download class="btn btn-outline-primary btn-sm mt-3 w-100">
+              <h5 class="fw-bold mb-3">Initiation aux réseaux informatiques</h5>
+              <p class="card-text small text-muted">
+                Mise en place de machines virtuelles et réseaux isolés avec VirtualBox.
+              </p>
+              <a href="projets/Administrer/r101.zip" download class="btn btn-outline-primary btn-sm mt-3 w-100">
                 <i class="bi bi-download me-2"></i>Télécharger les CR
               </a>
             </div>
           </div>
         </div>
+
       </div>
 
+      <!-- Retour -->
       <div class="text-center mt-5">
         <a href="index.html#competences" class="btn btn-secondary px-4 shadow-sm">
           <i class="bi bi-arrow-left me-2"></i>Retour au Portfolio
@@ -110,7 +236,9 @@
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
-  <script>AOS.init();</script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>

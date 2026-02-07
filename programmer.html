@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -11,69 +12,194 @@
   <link href="main.css" rel="stylesheet">
 
   <style>
-    /* C'est ici que la magie opère pour ton fond d'écran */
+    /* Fond d'écran */
     body {
       background-image: url('assets/img/background/programmer.png');
-      /* Le chemin vers ton image locale */
       background-size: cover;
-      /* L'image s'étire pour couvrir tout l'écran */
       background-position: center;
-      /* L'image est centrée */
       background-repeat: no-repeat;
-      /* Pas de répétition moche */
       background-attachment: fixed;
-      /* L'image reste fixe quand tu scrolles */
     }
 
+    /* Palette pro */
+    :root {
+      --primary-blue: #1f3a5f;
+      --soft-blue: #2f5d8c;
+      --light-bg: rgba(255, 255, 255, 0.95);
+      --card-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Cartes projets classiques */
     .project-card {
       transition: all 0.3s ease-in-out;
       border: none;
-      border-radius: 15px;
-      /* Fond blanc légèrement transparent pour que le texte soit lisible sur ton image */
-      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 18px;
+      background-color: var(--light-bg);
+      box-shadow: var(--card-shadow);
     }
 
     .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
     }
 
+    /* Icône ronde */
     .icon-circle {
-      width: 80px;
-      height: 80px;
-      background: #f0f7ff;
+      width: 75px;
+      height: 75px;
+      background: #eef3f8;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 20px;
-      color: #0563bb;
-      font-size: 2rem;
+      color: var(--primary-blue);
+      font-size: 1.9rem;
+    }
+
+    /* Bloc validation compétence */
+    .validation-box {
+      background: var(--light-bg);
+      border-left: 6px solid var(--primary-blue);
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .validation-box h4 {
+      color: var(--primary-blue);
+    }
+
+    /* Cartes SAE */
+    .sae-card {
+      border-radius: 20px;
+      background: white;
+      border: 1px solid #dbe3ec;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+    }
+
+    .sae-card::before {
+      content: "SAÉ";
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--primary-blue);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 8px;
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      opacity: 0.9;
+    }
+
+    .sae-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Boutons pro */
+    .btn-primary {
+      background-color: var(--primary-blue);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--soft-blue);
+    }
+
+    .btn-outline-primary {
+      border-color: var(--primary-blue);
+      color: var(--primary-blue);
+    }
+
+    .btn-outline-primary:hover {
+      background-color: var(--primary-blue);
+      color: white;
+    }
+
+    h2 {
+      color: var(--primary-blue);
     }
   </style>
 </head>
 
 <body>
+
   <main id="main" class="py-5">
     <div class="container" data-aos="fade-up">
 
-      <div class="section-title text-center mb-5">
-        <div style="background-color: rgba(255,255,255,0.8); display: inline-block; padding: 15px; border-radius: 10px;">
+      <!-- Titre -->
+      <div class="section-title text-center mb-4">
+        <div style="background-color: rgba(255,255,255,0.9); display: inline-block; padding: 18px 25px; border-radius: 12px;">
           <h2 class="fw-bold">Projets : Programmer</h2>
-          <p class="text-muted">Développement d'outils, scripts d'automatisation et gestion de données.</p>
+          <p class="text-muted mb-0">Développement d'outils, scripts d'automatisation et gestion de données.</p>
         </div>
       </div>
 
+      <!-- Validation compétence -->
+      <div class="validation-box mb-5 text-center">
+        <h4 class="fw-bold mb-3">Compétence Programmer validée</h4>
+        <p class="mb-0 text-muted">
+          J’ai validé la compétence <strong>Programmer</strong> grâce aux projets réalisés en BUT.
+          Je sais développer des scripts Python, automatiser des tâches système, manipuler des données,
+          structurer un projet de développement et utiliser Git pour versionner mon travail.
+          La création de ce site Web et les projets réalisés en SAÉ illustrent ces compétences.
+        </p>
+      </div>
+
+      <!-- Cartes -->
       <div class="row gy-4 justify-content-center">
 
+        <!-- SAE 1 -->
+        <div class="col-lg-5 col-md-6">
+          <div class="card sae-card h-100 p-4">
+            <div class="icon-circle"><i class="bi bi-database-check"></i></div>
+            <div class="card-body text-center p-0">
+              <h5 class="fw-bold mb-3">SAÉ - Traitement de données</h5>
+              <p class="card-text small text-muted">
+                Analyse, nettoyage et traitement de données à l’aide de scripts :
+                tri, statistiques, automatisation et exploitation des résultats.
+              </p>
+              <a href="https://gitlab.univ-artois.fr/TON_COMPTE/TON_PROJET" target="_blank"
+                class="btn btn-primary btn-sm mt-3 w-100">
+                <i class="bi bi-box-arrow-up-right me-2"></i>Accéder au GitLab
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SAE 2 - SITE WEB -->
+        <div class="col-lg-5 col-md-6">
+          <div class="card sae-card h-100 p-4">
+            <div class="icon-circle"><i class="bi bi-github"></i></div>
+            <div class="card-body text-center p-0">
+              <h5 class="fw-bold mb-3">SAÉ - Développement site Web</h5>
+              <p class="card-text small text-muted">
+                Conception et développement de ce portfolio en HTML/CSS,
+                structuration des pages, design et mise en ligne via GitHub Pages.
+              </p>
+              <a href="https://github.com/edysondegand/edysondegand.github.io.git" target="_blank"
+                class="btn btn-primary btn-sm mt-3 w-100">
+                <i class="bi bi-eye me-2"></i>Voir le dépôt Git
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projet Python -->
         <div class="col-lg-4 col-md-6">
-          <div class="card project-card shadow-sm h-100 p-4">
+          <div class="card project-card h-100 p-4">
             <div class="icon-circle">
               <i class="bi bi-code-slash"></i>
             </div>
             <div class="card-body text-center p-0">
               <h5 class="fw-bold mb-3">Programmation Python</h5>
-              <p class="card-text small text-muted">Développement de scripts vu dans la ressource R1.07.</p>
+              <p class="card-text small text-muted">
+                Développement de scripts vu dans la ressource R1.07.
+              </p>
               <a href="projets/r107.zip" download class="btn btn-outline-primary btn-sm mt-3 w-100">
                 <i class="bi bi-download me-2"></i>Télécharger les codes
               </a>
@@ -81,31 +207,20 @@
           </div>
         </div>
 
+        <!-- Projet Scripts -->
         <div class="col-lg-4 col-md-6">
-          <div class="card project-card shadow-sm h-100 p-4">
+          <div class="card project-card h-100 p-4">
             <div class="icon-circle">
               <i class="bi bi-terminal"></i>
             </div>
             <div class="card-body text-center p-0">
               <h5 class="fw-bold mb-3">Scripts système et requêtes web</h5>
-              <p class="card-text small text-muted">Développement de scripts système et de requêtes web vu dans la ressource R1.07.</p>
-              <a href="https://gitlab.univ-artois.fr/edyson_degand/r107" download class="btn btn-outline-primary btn-sm mt-3 w-100">
-                <i class="bi bi-download me-2"></i>Accéder au répertoire gitlab
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-          <div class="card project-card shadow-sm h-100 p-4 border-top border-primary border-4">
-            <div class="icon-circle">
-              <i class="bi bi-github"></i>
-            </div>
-            <div class="card-body text-center p-0">
-              <h5 class="fw-bold mb-3">Développement site Web</h5>
-              <p class="card-text small text-muted">Création de ce portfolio via HTML/CSS et hébergement sur GitHub Pages.</p>
-              <a href="https://github.com/edysondegand/edysondegand.github.io.git" target="_blank" class="btn btn-primary btn-sm mt-3 w-100">
-                <i class="bi bi-eye me-2"></i>Voir le dépôt Git
+              <p class="card-text small text-muted">
+                Scripts système et requêtes web réalisés en R1.07.
+              </p>
+              <a href="https://gitlab.univ-artois.fr/edyson_degand/r107" target="_blank"
+                class="btn btn-outline-primary btn-sm mt-3 w-100">
+                <i class="bi bi-box-arrow-up-right me-2"></i>Accéder au GitLab
               </a>
             </div>
           </div>
@@ -113,6 +228,7 @@
 
       </div>
 
+      <!-- Retour -->
       <div class="text-center mt-5">
         <a href="index.html#competences" class="btn btn-secondary px-4 shadow-sm">
           <i class="bi bi-arrow-left me-2"></i>Retour au Portfolio
@@ -124,6 +240,9 @@
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
-  <script>AOS.init();</script>
+  <script>
+    AOS.init();
+  </script>
 </body>
+
 </html>
