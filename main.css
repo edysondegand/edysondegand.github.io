@@ -253,7 +253,7 @@ section, .section {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.78);
+  background: rgba(255,255,255,0.57);
   z-index: 2;
 }
 
@@ -306,7 +306,7 @@ section, .section {
 
   padding: 8px 12px;
   border-radius: 12px;
-  background: rgba(255,255,255,0.72);
+  background: rgba(255,255,255,0.35);
   border: 1px solid rgba(31,58,95,0.12);
   transition: 0.2s;
 }
@@ -315,7 +315,7 @@ section, .section {
 .link_iut i { opacity: 0.7; }
 
 .link_iut:hover {
-  background: rgba(255,255,255,0.92);
+  background: rgba(255,255,255,0.35);
   box-shadow: 0 10px 24px rgba(0,0,0,0.12);
   transform: translateY(-1px);
 }
@@ -334,7 +334,7 @@ section, .section {
   margin: 0 8px;
   border-radius: 999px;
 
-  background: rgba(255,255,255,0.45);
+  background: rgba(255,255,255,0.35);
   border: 1px solid rgba(31,58,95,0.16);
   box-shadow: 0 10px 22px rgba(0,0,0,0.08);
 
@@ -547,7 +547,7 @@ section, .section {
   bottom: -100%;
   z-index: 3;
   transition: all ease-in-out 0.45s;
-  background: rgba(255,255,255,0.96);
+  background: rgba(255,255,255,0.35);
   border: 1px solid rgba(0,0,0,0.06);
   border-radius: 12px;
   padding: 14px;
